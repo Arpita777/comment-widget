@@ -1,0 +1,9 @@
+h1, p {
+  font-family: Lato;
+}
+.card{
+  width: 100px;
+  height: 100px;
+  background: green;
+  text-decoration-color: black;
+}
