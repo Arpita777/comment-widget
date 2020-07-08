@@ -16,7 +16,8 @@ class App extends Component {
     
     this.setState({
     arr,
-    replied:this.state.replied?false:this.state.replied
+    replied:this.state.replied?false:this.state.replied,
+    currentIndex:-1
     })
    
   }
@@ -33,9 +34,29 @@ class App extends Component {
    })
   
   }
+  findUIDObj = (uid, arr) => {
+    if (!arr) return;
+    const idx = arr.findIndex(obj => obj.userid === uid);
+    if (idx > -1) return [arr, idx];
+    for (const obj of arr) {
+        const result = this.findUIDObj(uid, obj.children);
+        if (result) return result;
+    }
+};
+  handleDelete=(id)=>{
+    var newArr=this.state.arr;
+    const [arr, idx] = this.findUIDObj(id, newArr) || [];
+if (arr) {
+    arr.splice(idx, 1); // Remove object from its parent array
+}
+this.setState({
+  arr:newArr
+})
+  }
 
   render() {
     console.log(this.state.arr)
+    console.log('currentIndex',this.state.currentIndex)
     return (
       <div className='App'>
       {this.state.replied && <h2>Replying to...</h2>}
@@ -51,8 +72,10 @@ class App extends Component {
             
             <Comment key={comment.userid}
                      handleReply={this.handleReply}
+                     handleDelete={this.handleDelete}
                      handleEdit={this.handleEdit}
-                     comment={comment}/>
+                     comment={comment}
+                     handleReply={this.handleReply}/>
             
           )
         })

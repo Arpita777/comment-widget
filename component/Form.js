@@ -28,7 +28,7 @@ class Form extends React.Component{
        prevProps.arr.length != this.props.arr.length){
          this.setState({
            ...this.returnStateObject(),
-           userid:prevProps.userid,
+           userid:this.state.userid,
            children:prevProps.children
          })
        }
@@ -79,6 +79,7 @@ for(var key in obj){
      e.preventDefault();
      const arr=this.props.arr;
      if(!this.props.replied && this.props.currentIndex==-1){
+       console.log('if block of handle submit called!')
        arr.push({
               user:this.state.user,
               comment:this.state.comment,
@@ -89,11 +90,13 @@ for(var key in obj){
              
      }
      else if(this.props.replied && this.props.currentIndex==-1){
+       console.log('else if block of handle submit called!')
       this.contains(this.props.arr,this.props.repliedId)
      
         
      }
      else{
+       console.log('else block of handle submit called!')
         this.contains(this.props.arr,this.props.currentIndex)
      }
      this.props.handleState(arr)
