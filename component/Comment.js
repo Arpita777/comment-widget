@@ -1,15 +1,14 @@
 import React from 'react'
 
-const Comment = ({handleReply,comment}) => {
+const Comment = ({handleEdit,handleReply,comment}) => {
   const setReply=(id)=>{
-    console.log('Reply was clicked!')
     handleReply(id)
   }
   const setEdit=(id)=>{
-    
+    handleEdit(id)
   }
   const nestedComments = (comment.children || []).map(comment => {
-    return <Comment key={comment.userid} comment={comment} handleReply={handleReply} type="child" />
+    return <Comment key={comment.userid} comment={comment} handleReply={handleReply} handleEdit={handleEdit} type="child" />
   })
 
   return (

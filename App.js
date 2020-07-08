@@ -8,7 +8,8 @@ class App extends Component {
 
     arr:[],
     replied:false,
-    repliedId:''
+    repliedId:'',
+    currentIndex:-1
   }
  
   handleState=(arr)=>{
@@ -18,6 +19,11 @@ class App extends Component {
     replied:this.state.replied?false:this.state.replied
     })
    
+  }
+  handleEdit=(id)=>{
+    this.setState({
+      currentIndex:id
+    })
   }
   handleReply=(id)=>{
    
@@ -36,7 +42,8 @@ class App extends Component {
       <Form arr={this.state.arr}
             handleState={this.handleState}
             replied={this.state.replied}
-            repliedId={this.state.repliedId}/>
+            repliedId={this.state.repliedId}
+            currentIndex={this.state.currentIndex}/>
       {
         this.state.arr.map((comment)=>{
           return(
@@ -44,6 +51,7 @@ class App extends Component {
             
             <Comment key={comment.userid}
                      handleReply={this.handleReply}
+                     handleEdit={this.handleEdit}
                      comment={comment}/>
             
           )
