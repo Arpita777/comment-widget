@@ -1,7 +1,6 @@
 h1, p {
   font-family: Lato;
 }
-.fa { font-family: 'FontAwesome' !important; } 
 .card{
   font-size: 1em;
     position: relative;
@@ -11,6 +10,7 @@ h1, p {
     line-height: 1.4em;
     font-family: Helvetica;
 }
+
 textarea{
         width: 40%;
         height: 100px;

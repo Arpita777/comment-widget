@@ -122,10 +122,12 @@ for(var key in obj){
        <form onSubmit={this.handleSubmit}>
          <input type='text' name='user' value={user} 
                 onChange={this.handleChange}
-                placeholder='user'/><br/>
+                placeholder='user'
+                required/><br/>
          <textarea name="comment" value={comment}
                    placeholder='Type your comment here'
-                   onChange={this.handleChange}>Enter text here...</textarea><br/>
+                   onChange={this.handleChange}
+                   required>Enter text here...</textarea><br/>
          <input type='submit' value='Post'/>
        </form>
     )
