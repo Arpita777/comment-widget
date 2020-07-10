@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style.css'
 
 class Form extends React.Component{
   constructor(props){
@@ -120,12 +121,12 @@ for(var key in obj){
     return(
        <form onSubmit={this.handleSubmit}>
          <input type='text' name='user' value={user} 
-         onChange={this.handleChange}
-         placeholder='user'/><br/>
-       <textarea name="comment" value={comment}
-       placeholder='comment'
-      onChange={this.handleChange}>Enter text here...</textarea>
-       <input type='submit' value='Comment'/>
+                onChange={this.handleChange}
+                placeholder='user'/><br/>
+         <textarea name="comment" value={comment}
+                   placeholder='Type your comment here'
+                   onChange={this.handleChange}>Enter text here...</textarea><br/>
+         <input type='submit' value='Post'/>
        </form>
     )
   }

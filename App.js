@@ -55,8 +55,6 @@ this.setState({
   }
 
   render() {
-    console.log(this.state.arr)
-    console.log('currentIndex',this.state.currentIndex)
     return (
       <div className='App'>
       {this.state.replied && <h2>Replying to...</h2>}

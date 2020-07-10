@@ -1,9 +1,37 @@
 h1, p {
   font-family: Lato;
 }
+.fa { font-family: 'FontAwesome' !important; } 
 .card{
-  width: 100px;
-  height: 100px;
-  background: green;
-  text-decoration-color: black;
+  font-size: 1em;
+    position: relative;
+    margin-left: 60px;
+    border-radius: 0.75em 0.75em 0.75em 0.75em;
+    background-color: #ccc;
+    line-height: 1.4em;
+    font-family: Helvetica;
+}
+textarea{
+        width: 40%;
+        height: 100px;
+        padding: 10px;
+        background-color: #d0e2bc;
+        font: 1.4em/1.6em cursive;
+        color: #095484;
+}
+input[type=submit]{
+  background-color: #4CAF50;
+  border: none;
+  border-radius:4px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+input{
+        width: 10%;
+        height: 50px;
+        padding: 10px;
+        background-color: #d0e2bc;
+        font: 1.4em/1.6em cursive;
+        color: #095484;
 }

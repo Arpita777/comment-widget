@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReply,faEdit,faTrash} from '@fortawesome/free-solid-svg-icons';
 
 const Comment = ({handleDelete,handleEdit,handleReply,comment}) => {
   const setReply=(id)=>{
@@ -17,11 +19,20 @@ const Comment = ({handleDelete,handleEdit,handleReply,comment}) => {
   return (
     <div style={{"marginLeft": "25px", "marginTop": "10px"}}>
       <div className='card'>
-      UserName:{comment.user}<br/>
+      {comment.user}<hr/><br/>
       {comment.comment}<br/>
-      <button onClick={()=>setReply(comment.userid)}>Reply</button><br/>
-      <button onClick={()=>setEdit(comment.userid)}>Edit</button>
-       <button onClick={()=>setDelete(comment.userid)}>Delete</button>
+      <FontAwesomeIcon icon={faReply}
+                 onClick={()=>setReply(comment.userid)}
+                style={{cursor:'pointer'}}/><br/>
+
+      <FontAwesomeIcon icon={faEdit}
+                 onClick={()=>setEdit(comment.userid)}
+                style={{cursor:'pointer'}}/><br/>
+
+      <FontAwesomeIcon icon={faTrash}
+                 onClick={()=>setDelete(comment.userid)}
+                style={{cursor:'pointer'}}/>
+       
       </div>
       {nestedComments}
     </div>
