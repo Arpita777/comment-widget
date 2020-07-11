@@ -1,15 +1,6 @@
 h1, p {
   font-family: Lato;
 }
-.card{
-  font-size: 1em;
-    position: relative;
-    margin-left: 60px;
-    border-radius: 0.75em 0.75em 0.75em 0.75em;
-    background-color: #ccc;
-    line-height: 1.4em;
-    font-family: Helvetica;
-}
 
 textarea{
         width: 40%;
@@ -34,4 +25,33 @@ input{
         background-color: #d0e2bc;
         font: 1.4em/1.6em cursive;
         color: #095484;
+}
+.commentBox{
+  padding:1%;
+  width:50%;
+  border:3px solid green;
+  background-color: grey;
+  border-radius:5px;
+
+}
+.leftPanelImg{
+  width:10%;
+  float:left;
+}
+.leftPanelImg img{
+  border-radius: 100%;
+}
+.rightPanel{
+  width:65%;
+  float:left;
+  margin-left:1%;
+  
+}
+.user{
+  color:black;
+  font-weight:bold;
+}
+
+.clear{
+  clear:both;
 }

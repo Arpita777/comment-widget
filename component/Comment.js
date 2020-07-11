@@ -19,25 +19,46 @@ const Comment = ({handleDelete,handleEdit,handleReply,comment}) => {
 
   return (
     <div style={{"marginLeft": "25px", "marginTop": "10px"}}>
-      <div className='card'>
-      <FontAwesomeIcon icon={faUserCircle}
-                       size={'2x'}
-                       style={{margin:'auto',justifyContent:'center'}}/>
-      <div className='user'>{comment.user}</div><hr/><br/>
-      <div className='comment'>{comment.comment}</div><br/>
-      <FontAwesomeIcon icon={faReply}
-                 onClick={()=>setReply(comment.userid)}
-                style={{cursor:'pointer'}}/>
+    <div className='commentBox'>
+         <div className='leftPanelImg'>
+            <FontAwesomeIcon icon={faUserCircle}
+                     size={'3x'}
+                     style={{color:'green'}}/>
+         </div>
+         <div className='rightPanel'>
+          <span className='user'>{comment.user}</span>
+          <p>
+          {comment.comment}<br/>
+         
+          </p>
+         </div>
+         <div className='icons' style={{float:'right'}}>
 
-      <FontAwesomeIcon icon={faEdit}
+        <span> 
+             <FontAwesomeIcon icon={faReply}
+                onClick={()=>setReply(comment.userid)}
+                style={{cursor:'pointer',marginLeft:'4px',color:'green'}}/>
+               
+              
+        </span>
+        
+        
+         <span> <FontAwesomeIcon icon={faEdit}
                  onClick={()=>setEdit(comment.userid)}
-                style={{cursor:'pointer'}}/>
-
-      <FontAwesomeIcon icon={faTrash}
+                style={{cursor:'pointer',marginLeft:'2px',color:'green'}}/>
+               
+        </span>
+        
+         
+          <span> <FontAwesomeIcon icon={faTrash}
                  onClick={()=>setDelete(comment.userid)}
-                style={{cursor:'pointer'}}/>
-       
-      </div>
+                style={{cursor:'pointer',marginLeft:'0px',color:'green'}}/>
+               
+          </span>
+          
+          </div>
+         <div className='clear'></div>
+       </div>
       {nestedComments}
     </div>
   )
