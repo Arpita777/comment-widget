@@ -57,7 +57,7 @@ this.setState({
   render() {
     return (
       <div className='App'>
-      {this.state.replied && <h2>Replying to...</h2>}
+      {this.state.replied && <h3>Replying ...</h3>}
       <Form arr={this.state.arr}
             handleState={this.handleState}
             replied={this.state.replied}
